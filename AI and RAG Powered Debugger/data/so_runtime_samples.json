@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "source": "StackOverflow",
+    "title": "Missing constructor when using SELECT NEW DTO with query Java Persist Query Language",
+    "content": "i am using spring data jpa with hibernate 6. i want to fetch a list of cars into a dto using jpql select new syntax, with left join, group by, and case conditions. i keep getting the following error: caused by: java.lang.illegalargumentexception: org.hibernate.query.semanticexception: missing constructor for type 'carsresponsedto' [ select new com.duydev.backend",
+    "fix": "In order for the constructor DTO syntax to work, Hibernate needs to find an exact constructor match. In your current DTO definition: @Getter @Setter @NoArgsConstructor public class CarsResponseDto { Long id; String brand; String m"
+  },
+  {
+    "id": 2,
+    "source": "StackOverflow",
+    "title": "502 bad gateway Elastic Beanstalk Spring Boot",
+    "content": "i deployed a spring boot app on aws elastic beanstalk. i am facing a 502 bad gateway error. i cannot find anything useful from the logs /var/log/nginx/error.log 2019/02/10 02:12:54 [error] 3257#0: *1 connect() failed (111: connection refused) while connecting to upstream, client: ...., server: , request: \"get / http/1.1\", upstream: \"http://127.0.0.1:5000/\", host: \"....\" i do not have any",
+    "fix": "It's because server is listening to 5000, Adding \"server.port=5000\" to application.properties fixed the issue."
+  },
+  {
+    "id": 3,
+    "source": "StackOverflow",
+    "title": "Spring Boot/@JDBCTest - No qualifying bean of type 'com.fasterxml.jackson.databind.ObjectMapper' available",
+    "content": "bit of a spring boot rookie here, so appreciate any help! i've built a spring boot application with jdbctemplate that runs and functions normally with no errors or exceptions. i have produced a test class and want to use @jdbctest to test my dao objects. however, every time i run a test, i get java.lang.illegalstateexception: failed to load applicationcontext. there seems to be an issue with my controller classes. this illegalstateexception is caused by:",
+    "fix": "Hi :) What spring boot version do you have? Overall seems like a generic application context configuration issue. I would rather refactor a bit before starting with the test. It is very good to use the @Autowired constructors in Spring Boot. It will make your life much easier when you want to tes"
+  },
+  {
+    "id": 4,
+    "source": "StackOverflow",
+    "title": "REVINFO table is missing the sequence \"revinfo_seq\"",
+    "content": "i am migrating to springboot 3.0.1 and updated \"hibernate-envers\" version to \"6.1.6.final\". my db is postgresql 13.6. hibernate is configured to create the db schema: spring.jpa.hibernate.ddl-auto:create after starting the application i get the following error: pim 2022-12-27 12:00:13,715 warn c#c7b942ec-33b4-4749-b113-22cbb2946a8d [http-nio-9637-exec-1] sqlexceptionhelper/133 - sql error: 0, sqlstate: 42p01 pim 2022-12-",
+    "fix": "You can solve it with this property: spring.jpa.properties.hibernate.id.db_structure_naming_strategy: legacy Tested with Spring Boot 3.0.1 Reason: Hibernate 6 changed the sequence naming strategy, so it was searching for a sequence ending"
+  },
+  {
+    "id": 5,
+    "source": "StackOverflow",
+    "title": "Spring Security: AccessDeniedException with redirecting to the login page without OAuth 2 authentication",
+    "content": "i follow the book pro spring security 6 and try to make a simple oauth 2 authentication. my configuration: @configuration @enablewebsecurity public class springsecurityconfiguration { @bean securityfilterchain securityfilterchain(httpsecurity http) throws exception { return http .authorizehttprequests(auth -> auth .requestmatchers(\"/\").permitall() .requestmatchers(\"/welcome\")",
+    "fix": "Use oauth2Login, not formLogin"
+  },
+  {
+    "id": 6,
+    "source": "StackOverflow",
+    "title": "PortUnreachableExceptions spamming log after updating Spring Boot Parent",
+    "content": "after upgrading from spring-boot-parent version 2.5.5 to 2.6.0, i started seeing these error messages spamming the logs: [info] [stdout] 2022-01-11 13:40:01.157 warn 76859 --- [ udp-epoll-2] i.m.s.reactor.netty.channel.fluxreceive : [6d1243de, l:/127.0.0.1:58160 - r:localhost/127.0.0.1:8125] an exception has been observed post termination, use debug level to see the full stack: java.net.portunreachableexception: readaddress(..) failed: connection refused<",
+    "fix": "For Spring Boot versions < 3.0.5, assuming statsd is not used and configured on your side, since it's pointed to localhost, you may disable it by setting management.metrics.export.statsd.enabled to false From Spring boot versions >=3.0.5,"
+  }
+]
