@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.SpringForge</id>
+    <name>Code Generation</name>
+    <vendor email="SpringForge@yourorg.com">SpringForge</vendor>
+    <version>1.0.0</version>
+
+    <description>
+        Architecture-aware Spring Boot code generator (research)
+    </description>
+
+    <!-- Your plugin depends on Java module -->
+    <depends>com.intellij.modules.java</depends>
+
+    <!-- ✅ Register notification group -->
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="SpringForge" displayType="BALLOON" isLogByDefault="true"/>
+    </extensions>
+
+    <!-- ✅ Register the action in the Tools or Main Menu -->
+    <actions>
+        <action id="CodeGeneration.OpenInputYaml"
+                class="org.SpringForge.actions.OpenInputYmlAction"
+                text="CodeGeneration: Open input.yml"
+                description="Open and parse input.yml and analyze project">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
